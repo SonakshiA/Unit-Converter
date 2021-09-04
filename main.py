@@ -5,6 +5,8 @@ from math import pow
 initial = 0
 final = 0
 
+# selected metric 
+
 def selected(event):
     global input_dropdown, output_dropdown
     option = dropdown.get()
@@ -129,7 +131,8 @@ def length_convert(event):
 def temp_convert(event):
     global input_dropdown, output_dropdown,input_val, initial, final
     input_dropdown_option = input_dropdown.get()
-
+    
+    # converting to Kelvin
     if input_dropdown_option == "Celsius":
         initial = input_val.get() + 273.15
     elif input_dropdown_option == "Fahrenheit":
@@ -149,7 +152,8 @@ def temp_convert(event):
 def speed_convert(self):
     global input_dropdown, output_dropdown, input_val, initial, final
     input_dropdown_option = input_dropdown.get()
-
+    
+    #converting to m/s
     if input_dropdown_option == "km/h":
         initial = input_val.get()/3.6
     else:
@@ -166,6 +170,7 @@ def angle_convert(self):
     global input_dropdown, output_dropdown, input_val, initial, final
     input_dropdown_option = input_dropdown.get()
 
+    # converting to degrees
     if input_dropdown_option == "Radians":
         initial = input_val.get()*57.3
     else:
@@ -214,7 +219,8 @@ def mass_convert(event):
 def area_convert(event):
     global input_dropdown, output_dropdown, input_val, initial, final
     input_dropdown_option = input_dropdown.get()
-
+    
+    #converting to sq. metres
     if input_dropdown_option == "sq. mm":
         initial = input_val.get()/(1000*1000)
     elif input_dropdown_option == "sq. cm":
@@ -250,7 +256,8 @@ def area_convert(event):
 def volume_convert(event):
     global input_dropdown, output_dropdown, input_val, initial, final
     input_dropdown_option = input_dropdown.get()
-
+    
+    # converting to L
     if input_dropdown_option == "dL":
         initial = input_val.get() / 10
     elif input_dropdown_option == "cL":
@@ -270,7 +277,7 @@ def volume_convert(event):
 
     output_dropdown_option = output_dropdown.get()
 
-    # converting input (changed to metres) to desired unit
+ 
     if output_dropdown_option == "dL":
         final = initial * 10
     elif output_dropdown_option == "cL":
